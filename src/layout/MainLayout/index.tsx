@@ -1,19 +1,23 @@
-import { RootState } from "@redux/store";
-import { useSelector } from "react-redux";
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
 
 interface MainLayoutProps {
   children: React.ReactNode;
+  onSearch: (search: string) => void;
+  history: string[];
+  isLoading: boolean;
 }
 
-const MainLayout = ({ children }: MainLayoutProps) => {
-  const { news } = useSelector((state: RootState) => state);
-
+const MainLayout = ({
+  onSearch,
+  history,
+  isLoading,
+  children,
+}: MainLayoutProps) => {
   return (
     <div>
-      <Topbar />
-      <Sidebar history={news.history} />
+      <Topbar onSearch={onSearch} isLoading={isLoading} />
+      <Sidebar history={history} isLoading={isLoading} onSearch={onSearch} />
       <div className="p-4 mt-16 ml-64">{children}</div>
     </div>
   );

@@ -1,1 +1,1 @@
-export const DEFAULT_SELECTED_FILTER: string = "All";
+export const DEFAULT_SELECTED_FILTER: string = "Todos";
