@@ -28,7 +28,7 @@ const NewInformation = ({ newData }: NewInformationProps) => {
         />
         <h1 className="text-2xl font-bold">{newData.title}</h1>
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         <p>{newData.description}</p>
         <a
           href={newData.url.toString()}

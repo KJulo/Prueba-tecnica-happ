@@ -22,10 +22,7 @@ export const getNews = async (search?: string) => {
     };
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      return {
-        status: error.response?.status,
-        message: error.response?.data.message,
-      };
+      throw new Error(error.response?.data.message);
     }
   }
 };

@@ -1,14 +1,25 @@
+import { useMemo } from "react";
+
 interface ButtonProps {
-  onClick: () => void;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
   children: React.ReactNode;
+  isLoading?: boolean;
 }
 
-const Button = ({ onClick, children }: ButtonProps) => {
+const Button = ({ onClick, children, isLoading }: ButtonProps) => {
+  const classButton = useMemo(() => {
+    const classLoading = isLoading
+      ? "disabled cursor-not-allowed disabled:bg-blue-400"
+      : "";
+    return `text-white border border-blue-700 bg-blue-700 hover:bg-blue-800  font-medium  text-sm px-5 py-2.5 text-center ${classLoading}`;
+  }, [isLoading]);
+
   return (
     <button
       type="button"
       onClick={onClick}
-      className="text-white border border-blue-700 bg-blue-700 hover:bg-blue-800  font-medium  text-sm px-5 py-2.5 text-center"
+      disabled={isLoading}
+      className={classButton}
     >
       {children}
     </button>

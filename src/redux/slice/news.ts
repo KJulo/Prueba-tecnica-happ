@@ -1,15 +1,19 @@
 import { NewsInterface } from "@interfaces/newsInterface";
-import { getNews } from "@network/News";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { getNews } from "@network/news";
+import { MAX_HISTORY } from "./constants";
 
 export const fetchNews = createAsyncThunk(
   "news/fetchNews",
-  async (search?: string) => {
+  async (search: string) => {
     const response = await getNews(search);
     if (response) {
-      return response.data?.articles;
+      return {
+        data: response.data?.articles as NewsInterface[],
+        search: search,
+      };
     }
-    return [];
+    return { data: [] as NewsInterface[], search: search };
   }
 );
 
@@ -17,6 +21,7 @@ const initialState = {
   news: [] as NewsInterface[],
   isLoading: false,
   error: "",
+  history: [] as string[],
 };
 
 const newsSlice = createSlice({
@@ -34,7 +39,11 @@ const newsSlice = createSlice({
     });
     builder.addCase(fetchNews.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.news = Array.isArray(action.payload) ? action.payload : [];
+      state.news = action.payload.data;
+      state.history =
+        state.history.length >= MAX_HISTORY
+          ? [action.payload.search, ...state.history.slice(0, MAX_HISTORY - 1)]
+          : [action.payload.search, ...state.history];
     });
     builder.addCase(fetchNews.rejected, (state, action) => {
       state.isLoading = false;
