@@ -8,13 +8,13 @@ interface MainLayoutProps {
 }
 
 const MainLayout = ({ children }: MainLayoutProps) => {
-  const { history } = useSelector((state: RootState) => state.news);
+  const { news } = useSelector((state: RootState) => state);
 
   return (
     <div>
       <Topbar />
-      <Sidebar history={history} />
-      <div className="p-4 mt-16 sm:ml-64">{children}</div>
+      <Sidebar history={news.history} />
+      <div className="p-4 mt-16 ml-64">{children}</div>
     </div>
   );
 };
