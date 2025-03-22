@@ -6,6 +6,7 @@ interface NewInformationProps {
 }
 
 const NewInformation = ({ newData }: NewInformationProps) => {
+  console.log(newData)
   const [error, setError] = useState(false)
 
   const handleErrorImage = () => {
@@ -19,7 +20,7 @@ const NewInformation = ({ newData }: NewInformationProps) => {
           width={160}
           height={160}
           src={
-            error
+            error || !newData.urlToImage
               ? 'https://nbhc.ca/sites/default/files/styles/article/public/default_images/news-default-image%402x_0.png?itok=B4jML1jF'
               : newData.urlToImage
           }
