@@ -13,6 +13,7 @@ export default defineConfig({
       "@components": path.resolve(__dirname, "src/components"),
       "@network": path.resolve(__dirname, "src/network"),
       "@utils": path.resolve(__dirname, "src/utils"),
+      "@lib": path.resolve(__dirname, "src/lib"),
     } as AliasOptions,
   },
 });

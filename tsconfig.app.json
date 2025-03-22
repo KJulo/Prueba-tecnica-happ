@@ -37,6 +37,9 @@
       "@network/*": [
         "src/network/*"
       ],
+      "@lib/*": [
+        "src/lib/*"
+      ],
     }
   },
   "include": [

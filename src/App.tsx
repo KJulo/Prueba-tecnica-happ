@@ -1,12 +1,11 @@
-import "./App.css";
+import MainLayout from "@layout/MainLayout";
 import NewInformation from "@modules/NewInformation";
 
 function App() {
   return (
-    <>
-      <h1 className="text-8xl">Noticias</h1>
+    <MainLayout>
       <NewInformation />
-    </>
+    </MainLayout>
   );
 }
 
