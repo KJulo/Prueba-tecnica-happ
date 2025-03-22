@@ -14,7 +14,7 @@ const NewInformation = ({ newData }: NewInformationProps) => {
   }
 
   return (
-    <div className="flex flex-row flex-wrap gap-4 rounded-2xl border-2 border-gray-200 p-4">
+    <div className="flex min-w-96 flex-row flex-wrap gap-4 rounded-2xl border-2 border-gray-200 p-4">
       <div className="flex flex-row gap-4">
         <img
           width={160}
