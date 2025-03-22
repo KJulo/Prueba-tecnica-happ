@@ -1,19 +1,19 @@
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
 
-interface MainLayoutProps {
+interface NewsLayoutProps {
   children: React.ReactNode;
   onSearch: (search: string) => void;
   history: string[];
   isLoading: boolean;
 }
 
-const MainLayout = ({
+const NewsLayout = ({
   onSearch,
   history,
   isLoading,
   children,
-}: MainLayoutProps) => {
+}: NewsLayoutProps) => {
   return (
     <div>
       <Topbar onSearch={onSearch} isLoading={isLoading} />
@@ -23,4 +23,4 @@ const MainLayout = ({
   );
 };
 
-export default MainLayout;
+export default NewsLayout;

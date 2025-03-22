@@ -1,6 +1,6 @@
 import Spinner from "@components/Spinner";
 import { NewsInterface } from "@interfaces/newsInterface";
-import NewInformation from "./components/NewInformation/NewInformation";
+import NewInformation from "./components/NewInformation";
 import { useEffect, useMemo, useState } from "react";
 import Select from "@components/Select";
 import { DEFAULT_SELECTED_FILTER } from "./constants";

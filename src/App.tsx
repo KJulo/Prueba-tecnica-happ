@@ -1,9 +1,9 @@
-import MainLayout from "@layout/MainLayout";
 import NewInformation from "@modules/NewsInformation";
 
 import { fetchNews } from "@redux/slice/news";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@redux/store";
+import NewsLayout from "@layout/NewsLayout";
 
 function App() {
   const { news } = useSelector((state: RootState) => state);
@@ -16,7 +16,7 @@ function App() {
   };
 
   return (
-    <MainLayout
+    <NewsLayout
       onSearch={handleSearch}
       history={news.history}
       isLoading={news.isLoading}
@@ -26,7 +26,7 @@ function App() {
         isLoading={news.isLoading}
         error={news.error}
       />
-    </MainLayout>
+    </NewsLayout>
   );
 }
 

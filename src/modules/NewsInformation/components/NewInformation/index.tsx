@@ -28,15 +28,15 @@ const NewInformation = ({ newData }: NewInformationProps) => {
         />
         <h1 className="text-2xl font-bold">{newData.title}</h1>
       </div>
-      <div className="flex flex-col w-full">
-        <p>{newData.description}</p>
+      <div className="flex flex-row flex-wrap w-full">
+        <p className="w-full">{newData.description}</p>
         <a
           href={newData.url.toString()}
           target="_blank"
           rel="noreferrer"
-          className="text-blue-500 underline text-end hover:text-blue-700 transition-all"
+          className="text-blue-500 underline ml-auto hover:text-blue-700 transition-all"
         >
-          Read more
+          Leer más
         </a>
       </div>
     </div>
