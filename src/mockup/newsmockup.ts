@@ -1,4 +1,6 @@
-export const NEWS_MOCKUP = [
+import { NewsInterface } from "@interfaces/newsInterface";
+
+export const NEWS_MOCKUP: NewsInterface[] = [
   {
     source: {
       id: null,

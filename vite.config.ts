@@ -14,6 +14,8 @@ export default defineConfig({
       "@network": path.resolve(__dirname, "src/network"),
       "@utils": path.resolve(__dirname, "src/utils"),
       "@lib": path.resolve(__dirname, "src/lib"),
+      "@layout": path.resolve(__dirname, "src/layout"),
+      "@interfaces": path.resolve(__dirname, "src/interfaces"),
     } as AliasOptions,
   },
 });

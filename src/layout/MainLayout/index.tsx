@@ -7,16 +7,10 @@ interface MainLayoutProps {
 
 const MainLayout = ({ children }: MainLayoutProps) => {
   return (
-    <div className={"flex flex-row"}>
-      <div>
-        <Sidebar />
-      </div>
-      <div className={"flex flex-col w-full"}>
-        <div>
-          <Topbar />
-        </div>
-        <div>{children}</div>
-      </div>
+    <div>
+      <Topbar />
+      <Sidebar />
+      <div className="p-4 mt-16 sm:ml-64">{children}</div>
     </div>
   );
 };

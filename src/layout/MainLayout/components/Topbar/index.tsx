@@ -8,14 +8,19 @@ const Topbar = () => {
     setSearch(event.target.value);
   };
   const handleSearch = () => {
-    //! search with redux
     console.log(search);
   };
   return (
-    <div className="h-12 bg-gray-200 w-full text-center place-content-center">
-      <Input onChange={handleChange} placeholder={""} />
-      <Button onClick={handleSearch}>Buscar</Button>
-    </div>
+    <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 ">
+      <div className="px-3 py-3 lg:px-5 lg:pl-3">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
+            <Input onChange={handleChange} placeholder={"Search news"} />
+            <Button onClick={handleSearch}>Search</Button>
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 };
 
