@@ -13,11 +13,11 @@ const Sidebar = ({ onSearch, history, isLoading }: SidebarProps) => {
   return (
     <aside
       id="logo-sidebar"
-      className="fixed top-0 left-0 z-40 w-64 h-screen pt-20  bg-white border-r border-gray-200  "
+      className="fixed top-0 left-0 z-40 h-screen w-64 border-r border-gray-200 bg-white pt-20"
       aria-label="Sidebar"
     >
-      <div className="h-full px-3 pb-4 overflow-y-auto bg-white flex flex-col gap-4">
-        <span className="border-b-2 w-full text-center">Historial</span>
+      <div className="flex h-full flex-col gap-4 overflow-y-auto bg-white px-3 pb-4">
+        <span className="w-full border-b-2 text-center">Historial</span>
         <ul className="space-y-2 font-medium">
           {history.map((item: string, index: number) => (
             <li key={`${item}-${index}`}>

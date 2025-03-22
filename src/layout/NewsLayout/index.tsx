@@ -13,7 +13,7 @@ const NewsLayout = ({ onSearch, history, isLoading, children }: NewsLayoutProps)
     <div>
       <Topbar onSearch={onSearch} isLoading={isLoading} />
       <Sidebar history={history} isLoading={isLoading} onSearch={onSearch} />
-      <div className="p-4 mt-16 ml-64">{children}</div>
+      <div className="mt-16 ml-64 p-4">{children}</div>
     </div>
   )
 }

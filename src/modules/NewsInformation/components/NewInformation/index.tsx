@@ -13,7 +13,7 @@ const NewInformation = ({ newData }: NewInformationProps) => {
   }
 
   return (
-    <div className="flex flex-row flex-wrap gap-4 border-2 rounded-2xl border-gray-200 p-4">
+    <div className="flex flex-row flex-wrap gap-4 rounded-2xl border-2 border-gray-200 p-4">
       <div className="flex flex-row gap-4">
         <img
           width={160}
@@ -28,13 +28,13 @@ const NewInformation = ({ newData }: NewInformationProps) => {
         />
         <h1 className="text-2xl font-bold">{newData.title}</h1>
       </div>
-      <div className="flex flex-row flex-wrap w-full">
+      <div className="flex w-full flex-row flex-wrap">
         <p className="w-full">{newData.description}</p>
         <a
           href={newData.url.toString()}
           target="_blank"
           rel="noreferrer"
-          className="text-blue-500 underline ml-auto hover:text-blue-700 transition-all"
+          className="ml-auto text-blue-500 underline transition-all hover:text-blue-700"
         >
           Leer más
         </a>

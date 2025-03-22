@@ -47,11 +47,11 @@ const NewsInformation = ({ news, isLoading, error }: NewInformationProps) => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>
+    return <span>Ha ocurrido un error. Por favor, inténtelo de nuevo.</span>
   }
 
   if (news.length === 0) {
-    return <div>No news to show.</div>
+    return <div>No hay noticias que mostrar.</div>
   }
 
   return (

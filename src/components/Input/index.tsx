@@ -10,7 +10,7 @@ const Input = ({ onChange, placeholder, className }: InputProps) => {
       type="text"
       placeholder={placeholder}
       onChange={onChange}
-      className={`bg-gray-100 border border-gray-700 text-gray-900 text-sm p-2.5 ${className}`}
+      className={`border border-gray-700 bg-gray-100 p-2.5 text-sm text-gray-900 ${className}`}
     />
   )
 }
