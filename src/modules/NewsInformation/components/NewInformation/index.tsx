@@ -1,16 +1,16 @@
-import { NewsInterface } from "@interfaces/newsInterface";
-import { useState } from "react";
+import { NewsInterface } from '@interfaces/newsInterface'
+import { useState } from 'react'
 
 interface NewInformationProps {
-  newData: NewsInterface;
+  newData: NewsInterface
 }
 
 const NewInformation = ({ newData }: NewInformationProps) => {
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(false)
 
   const handleErrorImage = () => {
-    setError(true);
-  };
+    setError(true)
+  }
 
   return (
     <div className="flex flex-row flex-wrap gap-4 border-2 rounded-2xl border-gray-200 p-4">
@@ -20,7 +20,7 @@ const NewInformation = ({ newData }: NewInformationProps) => {
           height={160}
           src={
             error
-              ? "https://nbhc.ca/sites/default/files/styles/article/public/default_images/news-default-image%402x_0.png?itok=B4jML1jF"
+              ? 'https://nbhc.ca/sites/default/files/styles/article/public/default_images/news-default-image%402x_0.png?itok=B4jML1jF'
               : newData.urlToImage
           }
           className="aspect-video h-40 w-40 object-cover"
@@ -40,7 +40,7 @@ const NewInformation = ({ newData }: NewInformationProps) => {
         </a>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NewInformation;
+export default NewInformation

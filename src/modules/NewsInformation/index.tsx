@@ -1,57 +1,57 @@
-import Spinner from "@components/Spinner";
-import { NewsInterface } from "@interfaces/newsInterface";
-import NewInformation from "./components/NewInformation";
-import { useEffect, useMemo, useState } from "react";
-import Select from "@components/Select";
-import { DEFAULT_SELECTED_FILTER } from "./constants";
+import Spinner from '@components/Spinner'
+import { NewsInterface } from '@interfaces/newsInterface'
+import NewInformation from './components/NewInformation'
+import { useEffect, useMemo, useState } from 'react'
+import Select from '@components/Select'
+import { DEFAULT_SELECTED_FILTER } from './constants'
 
 interface NewInformationProps {
-  news: NewsInterface[] | [];
-  isLoading: boolean;
-  error: string | "";
+  news: NewsInterface[] | []
+  isLoading: boolean
+  error: string | ''
 }
 
 const NewsInformation = ({ news, isLoading, error }: NewInformationProps) => {
-  const [selectedFilter, setSelectedFilter] = useState(DEFAULT_SELECTED_FILTER);
+  const [selectedFilter, setSelectedFilter] = useState(DEFAULT_SELECTED_FILTER)
   const filterOptions = useMemo(
     () =>
       news.reduce(
         (acc, curr) => {
           if (curr.source.name && !acc.includes(curr.source.name)) {
-            acc.push(curr.source.name);
+            acc.push(curr.source.name)
           }
-          return acc;
+          return acc
         },
         [DEFAULT_SELECTED_FILTER] as string[]
       ),
     [news]
-  );
+  )
 
   useEffect(() => {
-    setSelectedFilter(DEFAULT_SELECTED_FILTER);
-  }, [news]);
+    setSelectedFilter(DEFAULT_SELECTED_FILTER)
+  }, [news])
 
   const currentNews = useMemo(() => {
     if (selectedFilter === DEFAULT_SELECTED_FILTER) {
-      return news;
+      return news
     }
-    return news.filter((newData) => newData.source.name === selectedFilter);
-  }, [news, selectedFilter]);
+    return news.filter((newData) => newData.source.name === selectedFilter)
+  }, [news, selectedFilter])
 
   const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedFilter(e.target.value);
-  };
+    setSelectedFilter(e.target.value)
+  }
 
   if (isLoading) {
-    return <Spinner />;
+    return <Spinner />
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div>Error: {error}</div>
   }
 
   if (news.length === 0) {
-    return <div>No news to show.</div>;
+    return <div>No news to show.</div>
   }
 
   return (
@@ -61,7 +61,7 @@ const NewsInformation = ({ news, isLoading, error }: NewInformationProps) => {
         <NewInformation key={index} newData={newData} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default NewsInformation;
+export default NewsInformation

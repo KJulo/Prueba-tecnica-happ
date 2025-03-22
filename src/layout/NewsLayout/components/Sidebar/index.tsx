@@ -1,15 +1,15 @@
-import Button from "@components/Button";
+import Button from '@components/Button'
 
 interface SidebarProps {
-  onSearch: (search: string) => void;
-  history: string[];
-  isLoading: boolean;
+  onSearch: (search: string) => void
+  history: string[]
+  isLoading: boolean
 }
 
 const Sidebar = ({ onSearch, history, isLoading }: SidebarProps) => {
   const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    onSearch(e.currentTarget.textContent || "");
-  };
+    onSearch(e.currentTarget.textContent || '')
+  }
   return (
     <aside
       id="logo-sidebar"
@@ -21,11 +21,7 @@ const Sidebar = ({ onSearch, history, isLoading }: SidebarProps) => {
         <ul className="space-y-2 font-medium">
           {history.map((item: string, index: number) => (
             <li key={`${item}-${index}`}>
-              <Button
-                onClick={handleOnClick}
-                isLoading={isLoading}
-                className="w-full rounded-lg"
-              >
+              <Button onClick={handleOnClick} isLoading={isLoading} className="w-full rounded-lg">
                 {item}
               </Button>
             </li>
@@ -33,7 +29,7 @@ const Sidebar = ({ onSearch, history, isLoading }: SidebarProps) => {
         </ul>
       </div>
     </aside>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

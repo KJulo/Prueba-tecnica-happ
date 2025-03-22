@@ -1,0 +1,5 @@
+.vscode-test/
+.idea
+node_modules/
+public
+.gitlab-ci.yml

@@ -1,7 +1,7 @@
 interface InputProps {
-  placeholder?: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  className?: string;
+  placeholder?: string
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  className?: string
 }
 
 const Input = ({ onChange, placeholder, className }: InputProps) => {
@@ -12,7 +12,7 @@ const Input = ({ onChange, placeholder, className }: InputProps) => {
       onChange={onChange}
       className={`bg-gray-100 border border-gray-700 text-gray-900 text-sm p-2.5 ${className}`}
     />
-  );
-};
+  )
+}
 
-export default Input;
+export default Input
