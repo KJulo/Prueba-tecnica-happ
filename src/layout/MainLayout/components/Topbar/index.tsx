@@ -20,8 +20,16 @@ const Topbar = ({ onSearch, isLoading }: TopbarProps) => {
       <div className="px-3 py-3 lg:px-5 lg:pl-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <Input onChange={handleChange} placeholder={"Buscar noticias"} />
-            <Button onClick={handleSearch} isLoading={isLoading}>
+            <Input
+              onChange={handleChange}
+              placeholder={"Buscar noticias"}
+              className={"rounded-l-lg"}
+            />
+            <Button
+              onClick={handleSearch}
+              isLoading={isLoading}
+              className="rounded-r-lg"
+            >
               Buscar
             </Button>
           </div>
