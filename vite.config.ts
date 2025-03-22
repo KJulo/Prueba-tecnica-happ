@@ -16,6 +16,8 @@ export default defineConfig({
       "@lib": path.resolve(__dirname, "src/lib"),
       "@layout": path.resolve(__dirname, "src/layout"),
       "@interfaces": path.resolve(__dirname, "src/interfaces"),
+      "@hooks": path.resolve(__dirname, "src/hooks"),
+      "@redux": path.resolve(__dirname, "src/redux"),
     } as AliasOptions,
   },
 });

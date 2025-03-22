@@ -43,6 +43,12 @@
       "@interfaces/*": [
         "src/interfaces/*"
       ],
+      "@redux/*": [
+        "src/redux/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
     }
   },
   "include": [

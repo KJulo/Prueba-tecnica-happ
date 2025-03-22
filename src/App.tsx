@@ -1,14 +1,25 @@
 import MainLayout from "@layout/MainLayout";
 import NewInformation from "@modules/NewsInformation";
 
-import { NEWS_MOCKUP } from "./mockup/newsmockup";
+import { useEffect } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@redux/store";
+import { fetchNews } from "@redux/slice/news";
 
 function App() {
-  //! Here use redux to manage the state of the application
+  const { news } = useSelector((state: RootState) => state);
+  const dispatch = useDispatch<AppDispatch>();
+
+  console.log(news);
+
+  useEffect(() => {
+    dispatch(fetchNews());
+  }, [dispatch]);
 
   return (
     <MainLayout>
-      <NewInformation news={NEWS_MOCKUP} isLoading={false} />
+      <NewInformation news={news.news} isLoading={news.isLoading} />
     </MainLayout>
   );
 }
